@@ -1,0 +1,646 @@
+/*
+The CSS code gets to executed from top to bottom and left ro right
+Basic rules to write CSS
+- write GENERAL rules first (for all the paragraph tags in the website for example) and only after that write CSS for SPECIFIC tags (for example the paragraph tags inside the footer)
+- write the css styles to define for the parent (outside) container and THEN the children (inside containers) of that parent and THEN the children (inside containers) of the child above
+*/
+
+/* -------------------------------------
+CSS reset
+Is a short set of CSS rules that resets the styling of all HTML elements to a consistent baseline so the website will look the same on all browsers
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
+  box-sizing: border-box;
+  /*reset Chrome user agent styles*/
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-before: 0px;
+  -webkit-padding-after: 0px;
+  -webkit-padding-start: 0px;
+  -webkit-padding-end: 0px;
+  /*reset Firefox user agent styles*/
+  -moz-margin-before: 0px;
+  -moz-margin-after: 0px;
+  -moz-margin-start: 0px;
+  -moz-margin-end: 0px;
+  -moz-padding-before: 0px;
+  -moz-padding-after: 0px;
+  -moz-padding-start: 0px;
+  -moz-padding-end: 0px;
+  /*reset Internet Explorer user agent styles*/
+  -ms-margin-before: 0px;
+  -ms-margin-after: 0px;
+  -ms-margin-start: 0px;
+  -ms-margin-end: 0px;
+  -ms-padding-before: 0px;
+  -ms-padding-after: 0px;
+  -ms-padding-start: 0px;
+  -ms-padding-end: 0px;
+  /*reset Opera user agent styles*/
+  -o-margin-before: 0px;
+  -o-margin-after: 0px;
+  -o-margin-start: 0px;
+  -o-margin-end: 0px;
+  -o-padding-before: 0px;
+  -o-padding-after: 0px;
+  -o-padding-start: 0px;
+  -o-padding-end: 0px;
+}
+
+/* -------------------------------------
+General styles (General Module, wrapping around the modules below)
+(the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules below (h2, h3, h4, h5, h6, p, a, ul, li))
+*/
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  background-image: url("./images/Background-image.jpg");
+  background-color: #eee;
+  text-align: center;
+  line-height: 1.5;
+  height: auto;
+  /* border: 3px solid white; */
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.show-print-only {
+  display: none !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  scroll-padding-top: 4rem;
+}
+
+@media only screen and (max-width: 480px) {
+  html {
+    scroll-padding-top: 6rem;
+  }
+}
+
+/* -------------------------------------
+Header styles (Main Module)
+(all the styles inside the < header > or < nav > tags)
+*/
+
+header {
+  background-image: url("./images/Hero-image.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  height: 700px;
+  width: 100%;
+  display: block;
+  position: relative;
+  padding-top: 20px;
+  margin-top: 0;
+  text-align: center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+header h1 {
+  color: white;
+  margin-top: 10%;
+  font-size: 214%;
+}
+
+header nav {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  top: 0;
+  text-align: left;
+  padding: 10px;
+  background-color: white;
+  opacity: 0.8;
+}
+
+header nav ul.nav-items,
+header nav div.logo {
+  display: inline-block;
+  width: auto;
+}
+
+header nav div.logo {
+  padding: 0px 20px;
+  color: #163a8b;
+  font-family: "Roboto Slab";
+  font-size: 155%;
+}
+
+header nav ul.nav-items {
+  list-style-type: none;
+  margin-left: auto;
+}
+
+header nav ul.nav-items li {
+  display: inline-block;
+  width: auto;
+  padding: 10px 20px;
+  border-right: 2px solid #ddd;
+}
+
+header nav ul.nav-items li:last-child {
+  border-right: 0;
+}
+
+header nav ul.nav-items li a {
+  color: #163a8b;
+}
+
+header nav ul.nav-items li a:hover {
+  color: #525092;
+}
+
+/* -------------------------------------
+Content styles (Main Module)
+(all the styles inside the < sections > or < aside > tags)
+*/
+
+section {
+  width: 70%;
+  margin: 30px auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* border-bottom: 2px solid green; */
+  text-align: left;
+  font-family: "Roboto", serif;
+}
+
+section h2 {
+  font-size: 130%;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+section.about {
+}
+
+section.about h2 img.about-me-image {
+  float: right;
+  margin-right: 20px;
+  margin-left: 5px;
+  width: 32%;
+  border-radius: 15px;
+  border: 1px solid #081e6f;
+}
+
+section.about p.bio {
+  font-size: 90%;
+  margin-bottom: 20px;
+}
+
+section.skills div.logo-container figure.figure-skills {
+  display: inline-block;
+  width: 22%;
+  text-align: center;
+  padding: 2%;
+  margin: 1%;
+}
+
+section.skills div.logo-container figure.figure-skills img {
+  width: 100%;
+  max-height: 180px;
+  max-width: 180px;
+}
+
+section.work {
+  display: block;
+}
+
+section.work div.work-container {
+  margin-bottom: 5%;
+  margin-top: 2%;
+  border-bottom: 1px solid #ccc;
+}
+
+section.work div.work-container:last-child {
+  border-bottom: 0;
+}
+
+section.work div.work-container h4 {
+  margin-bottom: 15px;
+  font-size: 120%;
+}
+
+section.work p.app-description a {
+  color:rgb(0, 0, 0);
+  text-decoration: underline;
+}
+
+section.work div.work-container div.work-column {
+  display: inline-block;
+  width: 48%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  margin-bottom: 1rem;
+  vertical-align: top;
+  padding-left: 20px;
+}
+
+section.work div.work-container div.work-column img {
+  width: 100%;
+  margin-top: 3%;
+}
+
+section.work div.work-container div.work-column ul.work-skills {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  list-style-type: none;
+  font-size: 80%;
+}
+
+section.work div.work-container div.work-column ul.work-skills li {
+  display: inline-block;
+  width: auto;
+  padding: 5px 10px;
+  margin-top: 3px;
+  border: 1px solid #ddd;
+}
+
+section.work div.work-container div.work-column ul.work-buttons {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  list-style-type: none;
+}
+
+section.work
+  div.work-container
+  div.work-column
+  ul.work-buttons
+  li {
+  display: inline-block;
+  width: auto;
+}
+
+section.work
+  div.work-container
+  div.work-column
+  ul.work-buttons
+  li
+  a {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #163a8b;
+  color: white;
+  text-decoration: none;
+}
+
+section.work
+  div.work-container
+  div.work-column
+  ul.work-buttons
+  li
+  a:hover {
+  background-color: #081e6f;
+}
+
+section.work div.work-container .work-image {
+  width: 65%;
+  min-width: 280px;
+}
+
+section.work div.work-container .fas {
+  margin-bottom: 5%;
+}
+section.projects {
+  display: block;
+}
+
+section.projects div.project-container {
+  margin-bottom: 5%;
+  margin-top: 2%;
+  border-bottom: 1px solid #ccc;
+}
+
+section.projects div.project-container:last-child {
+  border-bottom: 0;
+}
+
+section.projects div.project-container h4 {
+  margin-bottom: 15px;
+  font-size: 120%;
+}
+
+section.projects div.project-container div.project-column {
+  display: inline-block;
+  width: 48%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  margin-bottom: 1rem;
+  vertical-align: top;
+  padding-left: 20px;
+}
+
+section.projects div.project-container div.project-column img {
+  width: 100%;
+  margin-top: 3%;
+}
+
+section.projects div.project-container div.project-column ul.project-skills {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  list-style-type: none;
+  font-size: 80%;
+}
+
+section.projects div.project-container div.project-column ul.project-skills li {
+  display: inline-block;
+  width: auto;
+  padding: 5px 10px;
+  margin-top: 3px;
+  border: 1px solid #ddd;
+}
+
+section.projects div.project-container div.project-column ul.project-buttons {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  list-style-type: none;
+}
+
+section.projects
+  div.project-container
+  div.project-column
+  ul.project-buttons
+  li {
+  display: inline-block;
+  width: auto;
+}
+
+section.projects
+  div.project-container
+  div.project-column
+  ul.project-buttons
+  li
+  a {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #163a8b;
+  color: white;
+  text-decoration: none;
+}
+
+section.projects
+  div.project-container
+  div.project-column
+  ul.project-buttons
+  li
+  a:hover {
+  background-color: #081e6f;
+}
+
+section.project div.project-container .project-image {
+  width: 65%;
+  min-width: 280px;
+}
+
+section.project div.project-container .fab {
+  font-size: x-large;
+}
+
+section.project div.project-container .fas {
+  margin-bottom: 5%;
+}
+
+section.contact {
+  text-align: center;
+}
+
+section.contact ul {
+  font-size: 150%;
+}
+
+section.contact ul.contact-list li {
+  list-style-type: none;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 120%;
+}
+
+section.contact ul.contact-list li a {
+  color: #163a8b;
+}
+
+section.contact ul.contact-list li a:hover {
+  color: #081e6f;
+}
+
+/* -------------------------------------
+Footer styles (Main Module)
+(all the styles inside the < footer > tag)
+*/
+
+footer {
+  margin-top: 50px;
+  margin-bottom: 15px;
+  border: 0px;
+}
+
+footer h4 {
+  font-size: 75%;
+}
+
+footer a i.far {
+  display: block;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  color: #163a8b;
+}
+
+footer a:hover i.far {
+  color: #081e6f;
+}
+
+/* -------------------------------------
+place all the desktop styles above this line
+Responsive styles
+(the very last module in the CSS, contains all the media queries and it is dealing with the compatibility with mobiles and tablets)
+place all the mobile tables styles below this line
+*/
+
+/*large desktop*/
+@media only screen and (max-width: 1600px) {
+  body {
+    /* border: 3px solid yellow; */
+  }
+}
+
+/*iPad lanscape / small laptop*/
+@media only screen and (max-width: 1024px) {
+  body {
+    /* border: 3px solid blue; */
+  }
+
+  header nav ul.nav-items li {
+    padding: 5px 10px;
+  }
+
+  header h1 {
+    margin-top: 20%;
+    font-size: 200%;
+  }
+
+  section {
+    width: 85%;
+  }
+
+  section.work {
+    display: block;
+    font-size: 90%;
+  }
+  section.projects {
+    display: block;
+    font-size: 90%;
+  }
+}
+
+/*iPad potrait*/
+@media only screen and (max-width: 768px) {
+  body {
+    /* border: 3px solid red; */
+  }
+
+  header {
+    height: 500px;
+  }
+
+  header nav ul.nav-items li span {
+    display: none;
+  }
+
+  section {
+    width: 95%;
+  }
+
+  section.work div.work-container div.work-column {
+    display: block;
+    width: 99%;
+    padding-left: unset
+  }
+  section.projects div.project-container div.project-column {
+    display: block;
+    width: 99%;
+    padding-left: unset
+  }
+
+  footer a i.far {
+    bottom: 5px;
+    right: 5px;
+  }
+}
+
+/*Android landscape*/
+@media only screen and (max-width: 640px) {
+  body {
+    /* border: 3px solid brown; */
+  }
+
+  header h1 {
+    font-size: 175%;
+  }
+
+  footer a i.far {
+    display: none;
+  }
+}
+
+/*iPhone landscape*/
+@media only screen and (max-width: 480px) {
+  body {
+    /* border: 3px solid green; */
+  }
+
+  header h1 {
+    font-size: 150%;
+    margin-top: 30%;
+  }
+
+  header nav {
+    flex-wrap: wrap;
+  }
+
+  header nav .logo {
+    margin: auto
+  }
+
+  header nav .nav-items {
+    margin: auto
+  }
+
+  section.about h2 img.about-me-image {
+    float: none;
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
+
+  section.skills div.logo-container figure.figure-skills {
+    width: 45%;
+  }
+}
+
+/*iPhone portrait*/
+@media only screen and (max-width: 320px) {
+  body {
+    /* border: 3px solid purple; */
+  }
+}
+
+@media print { 
+  /* All print styles */
+  #header, #footer, #nav { display: none !important; } 
+
+  section.work div.work-container div.work-column {
+    width: 100%;
+  }
+
+  section.work div.work-container div.work-column ul.work-buttons li {
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  section.projects div.project-container div.project-column {
+    width: 100%;
+  }
+
+  section.projects div.project-container div.project-column ul.project-buttons li {
+    display: block;
+  }
+ }
